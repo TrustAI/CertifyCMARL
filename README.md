@@ -8,4 +8,4 @@ with two and four agents. The experimental results show that our method produces
 
 ### Note: This work is just accepted by the Thirty-Seventh AAAI Conference on Artificial Intelligence (AAAI 2023). Now we are preparing for the final version of this work. Our tool will be released soon via this repository.
 
--- Wenjie Ruan
+-- Ronghu Mu & Wenjie Ruan
