@@ -9,6 +9,21 @@ with two and four agents. The experimental results show that our method produces
 # Implementation
 ## Evironment Installation
 
-pip install ma-gym
+pip install ma-gym torch>=1.8 wandb
+
+## Train MARLs
+### We use the minimal-marl to train agents
+
+To train the VDN algorithms
+
+python vdn.py
+
+To train the QMIX algorithms
+
+python qmix.py
+
+
+
+
 
 
