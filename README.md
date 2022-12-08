@@ -7,7 +7,7 @@ with two and four agents. The experimental results show that our method produces
 ##
 
 # Implementation
-##Evironment establish
+## Evironment establish
 
 pip install ma-gym
 
