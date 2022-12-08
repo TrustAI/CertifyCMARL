@@ -14,12 +14,12 @@ pip install ma-gym torch>=1.8 wandb
 ## Train MARLs
 ### We use the [minimal-marl](https://github.com/koulanurag/minimal-marl) to train agents
 
-To train the VDN algorithms
+To train the VDN algorithms in 'Traffic Junction' environment with four agents
 ```
 python vdn.py --env-name 'ma_gym:TrafficJunction4-v0'
 ```
 
-To train the QMIX algorithms
+To train the QMIX algorithms in 'Traffic Junction' environment with four agents
 ```
 python qmix.py --env-name 'ma_gym:TrafficJunction4-v0'
 ```
