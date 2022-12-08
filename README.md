@@ -15,13 +15,14 @@ pip install ma-gym torch>=1.8 wandb
 ### We use the minimal-marl to train agents
 
 To train the VDN algorithms
-
+```
 python vdn.py
+```
 
 To train the QMIX algorithms
-
+```
 python qmix.py
-
+```
 
 
 
