@@ -23,7 +23,7 @@ To train the QMIX algorithms in 'Traffic Junction' environment with four agents
 ```
 python qmix.py --env-name 'ma_gym:TrafficJunction4-v0'
 ```
-
+I released the trained agents in https://livelancsac-my.sharepoint.com/:f:/g/personal/mur2_lancaster_ac_uk/EpWgsGaU31BDpTVl0OHW5QkB89pNQVQq-DLhqGt8yg14fg?e=nycR7o, please contact me if you have trouble opening it.
 
 
 
