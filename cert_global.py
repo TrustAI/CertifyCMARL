@@ -33,7 +33,7 @@ parser = argparse.ArgumentParser(description='Qmix')
 parser.add_argument('--env_name', required=False, default='TrafficJunction4-v0')
 parser.add_argument('--model_n',  default='vdn',required=False)
 
-parser.add_argument('--sigma', type=float, default=0.3, required=False)
+parser.add_argument('--sigma', type=float, default=0.1, required=False)
 args = parser.parse_args()
 env_name=args.env_name
 model_n=args.model_n
