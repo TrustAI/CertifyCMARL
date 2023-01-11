@@ -31,7 +31,7 @@ import argparse
 parser = argparse.ArgumentParser(description='Qmix')
 
 parser.add_argument('--env_name', required=False, default='Checkers-v0')
-parser.add_argument('--model_path',  required='minimal-marl/vdn')
+parser.add_argument('--model_path',  required=False, default='minimal-marl/vdn')
 
 
 args = parser.parse_args()
