@@ -26,9 +26,14 @@ python qmix.py --env-name 'ma_gym:TrafficJunction4-v0'
 We released the trained agents in https://livelancsac-my.sharepoint.com/:f:/g/personal/mur2_lancaster_ac_uk/EpWgsGaU31BDpTVl0OHW5QkB89pNQVQq-DLhqGt8yg14fg?e=nycR7o. 
 Please contact us if you have trouble opening it.
 ## Per state robustness
-```
 
+To obatain the per-state robustness guaranteed bound, for the VDN in Checkers-v0 environments.
+You can change the value of sigma in the code to be single value or a list
+```
+python cert-ps.py --env_name 'checkers-v0' -- model_path 'vdn'
 ```
 ## Robustness for Global Reward
+
+
 
 
