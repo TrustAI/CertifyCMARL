@@ -27,6 +27,37 @@ from models import QNet, model_setup
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 np.random.seed(10)
 random.seed(2022)
+import argparse
+parser = argparse.ArgumentParser(description='Qmix')
+
+parser.add_argument('--env_name', required=False, default='TrafficJunction4-v0')
+parser.add_argument('--model_n',  default='vdn',required=False)
+
+parser.add_argument('--sigma', type=float, default=0.3, required=False)
+args = parser.parse_args()
+env_name=args.env_name
+model_n=args.model_n
+sigma=args.sigma
+if env_name=='Switch4-v0':
+    if model_n=='vdn':
+        model_path='minimal-marl/vdnma_gym:Switch4-v0'
+    else:
+        model_path='minimal-marl/qmix_Switch4-v0'
+elif env_name=='Checkers-v0':
+    if model_n=='vdn':
+        model_path='minimal-marl/vdn'
+    else:
+        model_path='minimal-marl/qmix_checkers'
+if env_name=='TrafficJunction4-v0':
+    if model_n=='vdn':
+        model_path='minimal-marl/vdnma_gym:TrafficJunction4-v0'
+    else:
+        model_path='minimal-marl/qmix_TrafficJunction4-v0'
+if env_name=='TrafficJunction10-v0':
+    if model_n=='vdn':
+        model_path='minimal-marl/vdnma_gym:TrafficJunction10-v0'
+    else:
+        model_path='minimal-marl/qmix_TrafficJunction10-v0'
 def sample_action(state, hidden):
     global q
     global env2
@@ -251,9 +282,7 @@ class NoisyObsWrapper(gym.ObservationWrapper):
         return obs + np.array([np.zeros(np.array(obs).shape[1]),self.sigma*np.random.standard_normal(size=np.array(obs).shape[1])])
         #return obs + self.sigma*np.random.standard_normal(size=np.array(obs).shape)
         #return obs + np.array([self.sigma*np.random.standard_normal(size=np.array(obs).shape[1]),np.zeros(np.array(obs).shape[1])])
-sigma = 0.1
-env_name='TrafficJunction4-v0'
-model_n='qmix'
+
 #env =  NoisyObsWrapper(gym.make("ma_gym:Switch2-v0"), sigma) 
 env=WithSnapshots(gym.make('ma_gym:'+env_name))
 env2=WithSnapshots(gym.make('ma_gym:'+env_name))
@@ -271,26 +300,7 @@ state_n = []
 labels_n =[]
 rew=0
 obs_n = env.reset()
-if env_name=='Switch4-v0':
-    if model_n=='vdn':
-        model_path='minimal-marl/vdnma_gym:Switch4-v0'
-    else:
-        model_path='minimal-marl/qmix_Switch4-v0'
-elif env_name=='Checkers-v0':
-    if model_n=='vdn':
-        model_path='minimal-marl/vdn'
-    else:
-        model_path='minimal-marl/qmix_checkers'
-if env_name=='TrafficJunction4-v0':
-    if model_n=='vdn':
-        model_path='minimal-marl/vdnma_gym:TrafficJunction4-v0'
-    else:
-        model_path='minimal-marl/qmix_TrafficJunction4-v0'
-if env_name=='TrafficJunction10-v0':
-    if model_n=='vdn':
-        model_path='minimal-marl/vdnma_gym:TrafficJunction10-v0'
-    else:
-        model_path='minimal-marl/qmix_TrafficJunction10-v0'
+
 #q = torch.load('minimal-marl/qmix_checkers')
 #q = torch.load('minimal-marl/vdn')
 q = model_setup(model_path)
