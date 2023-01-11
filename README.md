@@ -33,7 +33,11 @@ You can change the value of sigma in the code to be single value or a list
 python cert-ps.py --env_name 'checkers-v0' -- model_path 'vdn'
 ```
 ## Robustness for Global Reward
-
+To obatain the lower bound of global reward, for the VDN in TrafficJunction4-v0 environments with sigma 0.1
+```
+python cert-global.py --env_name 'TrafficJunction4-v0' -- model_n 'vdn'
+```
+In the code you should change the model_path to your saved path. 
 
 
 
